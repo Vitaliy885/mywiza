@@ -1,0 +1,30 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.top__line-header{
+
+	.top__line-container{
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		background-color: #ddd;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-moz-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+		padding: 30px 5px;
+		.top__line-items{
+			width: 33.3333%;
+		}
+		.schedule{
+			text-align: right;
+		}
+	}
+}
