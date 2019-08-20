@@ -1,0 +1,1 @@
+!function(){var e=document.querySelector(".btn__menu"),t=document.querySelector(".navbar");e.addEventListener("click",function(){t.classList.toggle("active-bar")})}();
