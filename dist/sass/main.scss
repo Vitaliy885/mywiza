@@ -1,12 +1,13 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-family: 'Roboto Condensed';
 }
 .top__line-header{
+	line-height: 1;
 	.top__line-container{
 		max-width: 1280px;
 		margin: 0 auto;
-		background-color: #ddd;
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
@@ -20,24 +21,48 @@ body{
 		-ms-align-items: center;
 		align-items: center;
 		.top__line-items{
-			width: 33.3333%;
+			width: 60%;
+			@media (max-width: 991px) {
+				width: 50%;
+			}
+			@media (max-width: 768px) {
+				width: 33.3333%;
+			}
+			b{
+				padding: 0px 20px;
+				font-size: 38px;
+				color: #007cff;
+				text-shadow: 0px 0px 2px #000;
+				-webkit-text-stroke-width: 1px;
+				-webkit-text-stroke-color: #fff;
+				font-family: fantasy;
+			}
 		}
 		.schedule{
-			text-align: right;
+			width: 20%;
+			@media (max-width: 991px) {
+				width: 25%;
+			}
+			@media (max-width: 768px) {
+				width: 33.3333%;
+			}
+			p{
+				padding-right: 20px;
+			}
 		}
 	}
 }
 .navbar__line{
 	color: #fff;
-display: -webkit-flex;
-display: -moz-flex;
-display: -ms-flex;
-display: -o-flex;
-display: flex;
-	background-color: blue;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	background-color: #007cff;
 	margin: 0 auto;
 	.navbar{
-			max-width: 1280px;
+		max-width: 1280px;
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
@@ -45,20 +70,21 @@ display: flex;
 		display: flex;
 		width: 100%;
 		text-align: center;
-	list-style-type: none;
-	margin: 0;
+		list-style-type: none;
+		margin: 0;
 
-	.navbar-items{
-		width: 20%;
-		text-transform: uppercase;
-		padding: 25px 0px;
-		-webkit-transition: all 0.2s ease-in-out;
-		-o-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
-		&:hover{
-			background-color: #fff;
-			color: blue;
+		.navbar-items{
+			width: 20%;
+			text-transform: uppercase;
+			padding: 25px 0px;
+			-webkit-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+			&:hover{
+				background-color: #fff;
+				color: #007cff;
+			}
 		}
 	}
-}
 }
