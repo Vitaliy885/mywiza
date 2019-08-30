@@ -369,7 +369,46 @@ body{
 }
 .experience{
 	background-color: #2e2f33;
-	height: 175px;
 	position: relative;
 	top: 130px;
+	.experience__list{
+		text-align: center;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 0px 10px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		.experience__item{
+			width: 33.3333%;
+			margin: 0 auto;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items:  center;
+			justify-content: center;
+
+			img{
+				height: 40px;
+
+			}
+			.experience__chapter{
+				color: #007cff;
+				padding: 0px 20px;
+				font-size: 32px;
+			}
+			.experience__title{
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 16px;
+				display: unset;
+			}
+		}
+	}
 }
