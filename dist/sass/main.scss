@@ -438,3 +438,33 @@ body{
 		}
 	}
 }
+.our__reviews{
+	position: relative;
+	top: 130px;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 10px;
+	.chapter{
+		text-transform: uppercase;
+		font-size: 24px;
+		letter-spacing: 1px;
+	}
+	.our__reviews-list{
+		.reviews__item{
+			text-align: center;
+			margin: auto;
+			border: 1px solid #ddd;
+			padding: 30px 10px;
+			margin: 0px 20px;
+			img{
+				width: 45px;
+			}
+			.review__owner{
+
+			}
+			.review__text{
+
+			}
+		}
+	}
+}
