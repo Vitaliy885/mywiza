@@ -340,8 +340,8 @@ body{
 			width: 50%;
 			padding: 5px;
 			@media (max-width: 768px) {
-			width: 100%;
-		}
+				width: 100%;
+			}
 			.service__title{
 				font-size: 18px;
 				font-weight: 600;
@@ -366,4 +366,10 @@ body{
 			}
 		}
 	}
+}
+.experience{
+	background-color: #2e2f33;
+	height: 175px;
+	position: relative;
+	top: 130px;
 }
