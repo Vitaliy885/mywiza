@@ -4,8 +4,10 @@ body{
 	font-family: 'Roboto Condensed';
 }
 .active-bar{
+	left: 0 !important;
 	display: flex !important;
 	flex-direction: column;
+	transition: all 0.2s ease-in-out;
 }
 .active-burger{
 	-webkit-transform: rotate(0deg) !important;
@@ -99,14 +101,16 @@ body{
 		z-index: 2;
 		list-style-type: none;
 		margin: 0;
+
 		text-align: center;
 		justify-content: center;
 		padding-left: unset;
 		@media (max-width: 768px) {
 			position: absolute;
 			top: 100%;
-			display: none;
+			left: -1000%;
 			background-color: #007cff;
+			transition: all 0.2s ease-in-out;
 		}
 		.navbar-items{
 			width: 15%;
