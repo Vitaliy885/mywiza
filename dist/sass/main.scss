@@ -467,4 +467,26 @@ body{
 			}
 		}
 	}
+	.right__arrow{
+		width: 50px;
+		position: absolute;
+		z-index: 9998;
+		top: 50%;
+		right: 0;
+		cursor: pointer;
+		@media(min-width: 1024px){
+			right: 30%;
+		}
+	}
+	.left__arrow{
+		width: 50px;
+		transform: rotate(180deg);
+		position: absolute;
+		z-index: 9998;
+		top: 50%;
+		cursor: pointer;
+		@media(min-width: 1024px){
+			left: 30%;
+		}
+	}
 }
