@@ -513,3 +513,39 @@ body{
 	}
 
 }
+.callback__wrapper{
+	background-image: url(../images/password.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 130px;
+	height: 450px;
+	position: relative;
+	&:after{
+		content: ' ';
+		top: 0;
+		background-color: #000;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		opacity: 0.5;
+	}
+	@media("min-width: 768px"){
+		background-attachment: fixed;
+	}
+	.callback__form{
+		position: absolute;
+		background-color: #fff;
+		z-index: 9998;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		padding: 20px;
+		text-align: center;
+		input{
+			display: block;
+			margin: 20px auto;
+			max-width: 200px;	
+		}
+	}
+}
