@@ -341,7 +341,7 @@ body{
 		}
 		.services__item{
 			margin: 20px auto;
-			width: 50%;
+			width: 60%;
 			padding: 5px;
 			@media (max-width: 768px) {
 				width: 100%;
@@ -597,6 +597,45 @@ body{
 		width: 70%;
 		@media (max-width: 768px) {
 			width: 100%;
+		}
+	}
+	.location__container{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin: 20px auto;
+		@media (max-width: 550px){
+			flex-direction: column;
+		}
+		.location-item{
+			width: 40%;
+			@media (max-width: 550px){
+				width: 100%;
+			}
+			.location-contact{
+				display: block;
+				line-height: 1.5;
+				font-size: 16px;
+				&:first-child{
+					font-weight: 600;
+				}
+			}
+			.map-location{
+				display: block;
+				background-color: #ddd;
+				height: 120px;
+				max-width: 300px;
+				margin: auto;
+				border: 1px solid #ddd;
+				@media (max-width: 550px){
+					margin: 20px auto;
+				}
+			}
 		}
 	}
 }
