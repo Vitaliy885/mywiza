@@ -9,8 +9,3 @@
 	});
 
 })();
-
-//scrolling animation
-(function{
-	
-})();
