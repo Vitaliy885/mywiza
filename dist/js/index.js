@@ -7,6 +7,4 @@
 		menu.classList.toggle('active-bar');
 		btnMenu.classList.toggle('active-burger');
 	});
-
 })();
-
