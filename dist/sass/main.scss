@@ -3,6 +3,16 @@ body{
 	padding: 0;
 	font-family: 'Roboto Condensed';
 }
+@keyframes scrollHeader {
+    from {
+        opacity: 0
+    }
+
+    to {
+        position: fixed;
+        opacity: 1
+    }
+}
 .active-bar{
 	left: 0 !important;
 	display: flex !important;
@@ -89,6 +99,7 @@ body{
 	display: flex;
 	background-color: #007cff;
 	margin: 0 auto;
+
 	transition: all 0.2s ease-in-out;
 	@media (max-width: 768px) {
 		padding: 10px 0px;
@@ -100,8 +111,11 @@ body{
 		top: 0px;
 		right: 0px;
 		z-index: 9999;
-		transition: all 0.2s ease-in-out
+    animation-duration: .4s;
+    animation-name: scrollHeader; 
+    animation-timing-function: linear;
 	}
+	
 	.navbar{
 		max-width: 1280px;
 		display: -webkit-flex;

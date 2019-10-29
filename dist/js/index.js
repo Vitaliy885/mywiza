@@ -11,10 +11,10 @@
 
 
 window.onscroll = function() {
-	if(window.pageYOffset > 1){
+	if(window.pageYOffset > 80){
 document.querySelector('.top__line-header').style.display = 'none';
 document.querySelector('.navbar__line').classList.add('scrollingHeader');
-document.querySelector('.scrollingBlockHidden').style.height = 69.2 +'px';
+document.querySelector('.scrollingBlockHidden').style.height = 150 +'px';
 	}else{
 		document.querySelector('.top__line-header').style.display = 'block';
 	document.querySelector('.navbar__line').classList.remove('scrollingHeader');
