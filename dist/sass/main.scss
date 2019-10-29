@@ -77,6 +77,9 @@ body{
 		}
 	}
 }
+.scrollingBlockHidden{
+	height: 0px;
+}
 .navbar__line{
 	color: #fff;
 	display: -webkit-flex;
@@ -86,9 +89,18 @@ body{
 	display: flex;
 	background-color: #007cff;
 	margin: 0 auto;
+	transition: all 0.2s ease-in-out;
 	@media (max-width: 768px) {
 		padding: 10px 0px;
 		position: relative;
+	}
+	&.scrollingHeader{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		right: 0px;
+		z-index: 9999;
+		transition: all 0.2s ease-in-out
 	}
 	.navbar{
 		max-width: 1280px;
@@ -116,7 +128,6 @@ body{
 		.navbar-items{
 			width: 15%;
 			text-transform: uppercase;
-			padding: 25px 0px;
 			-webkit-transition: all 0.2s ease-in-out;
 			-o-transition: all 0.2s ease-in-out;
 			transition: all 0.2s ease-in-out;
@@ -124,11 +135,24 @@ body{
 			&:hover{
 				background-color: #fff;
 				color: #007cff;
+				a{
+					color: #007cff;
+			}
 			}
 			@media (max-width: 768px) {
 				width: unset;
 				color: #fff;
 				border: 1px solid #fff;
+			}
+			a{
+				text-decoration: none;
+				color: #ffffff;
+				display: block;
+				width: 100%;
+				padding: 25px 0;
+				&:hover{
+					color: #007cff;
+				}
 			}
 		}
 	}
@@ -360,14 +384,12 @@ body{
 				color: #fff;
 				text-decoration: none;
 				text-transform: uppercase;
-				padding: 5px 30px;
-				border-radius: 3px;
+				padding: 10px 30px;
 				margin: 10px 0px;
 				font-size: 15px;
 				position: relative;
 				top: 10px;
 				letter-spacing: 1px;
-				box-shadow: 5px 5px 5px #ccc;
 			}
 		}
 	}

@@ -15,10 +15,11 @@
     "gulp-changed": "^4.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-connect": "^5.7.0",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-imagemin": "^6.1.1",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.13.0"
   },
   "dependencies": {
     "gulp-open": "^3.0.1",
