@@ -38,3 +38,11 @@ document.querySelector('.to-top').addEventListener('click', function () {
 });
 
 })();
+
+
+$('.scrollTo').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top -68
+    }, 500);
+    return false;
+});

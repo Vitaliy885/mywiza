@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto Condensed';
+    scroll-behavior: smooth;
 }
 
 @keyframes scrollHeader {
@@ -833,28 +834,30 @@ body {
         }
 
         &:after {
-        	content: '';
-        	position: absolute;
-   			left: 45%;
-   			top: 50%;
-        	height: 2px;
-        	transform: rotate(45deg);
-        	width: 30px;
-        	background-color: #ffffff;
+            content: '';
+            position: absolute;
+            left: 45%;
+            top: 50%;
+            height: 2px;
+            transform: rotate(45deg);
+            width: 30px;
+            background-color: #ffffff;
         }
-         &:before {
-        	content: '';
-        	position: absolute;
-   			left: 15%;
-   			top: 50%;
-        	height: 2px;
-        	transform: rotate(-45deg);
-        	width: 30px;
-        	background-color: #ffffff;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            height: 2px;
+            transform: rotate(-45deg);
+            width: 30px;
+            background-color: #ffffff;
         }
-        &.active{
-        	display: block;
-        	
+
+        &.active {
+            display: block;
+
         }
     }
 }
