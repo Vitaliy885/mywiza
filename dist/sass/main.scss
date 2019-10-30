@@ -307,32 +307,12 @@ body {
                 display: inline-block;
                 margin: 0px 20px;
                 text-transform: uppercase;
-                padding: 10px 40px;
                 letter-spacing: 1px;
                 border-radius: 3px;
                 font-weight: 600;
                 cursor: pointer;
-                transition: all 0.2s ease-in-out;
 
-                &:nth-child(1) {
-                    background-color: #fff;
-                    color: #000;
 
-                    &:hover {
-                        background-color: unset;
-                        color: #fff;
-                        border: 2px solid #fff;
-                    }
-                }
-
-                &:nth-child(2) {
-                    border: 2px solid #fff;
-
-                    &:hover {
-                        background-color: #fff;
-                        color: #000;
-                    }
-                }
 
                 @media ("max-width: 768px") {
                     margin: 10px;
@@ -340,6 +320,25 @@ body {
 
                 @media ("max-width: 450px") {
                     font-size: 14px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    display: block;
+                    padding: 10px 40px;
+                    transition: all 0.2s ease-in-out;
+                    border: 2px solid #fff;
+
+                    &:nth-child(1) {
+
+                        &:hover {
+                          background-color: #ffffff;
+                            color: #000;
+                            border: 2px solid #fff;
+                        }
+                    }
+
                 }
             }
         }
@@ -591,12 +590,15 @@ body {
     }
 
     .right__arrow {
-        width: 50px;
+        width: 25px;
         position: absolute;
         z-index: 9998;
         top: 50%;
         right: 0;
+        padding: 10px;
         cursor: pointer;
+        background-color: #007cff;
+        border-radius: 50%;
 
         @media(min-width: 1024px) {
             right: 30%;
@@ -604,12 +606,15 @@ body {
     }
 
     .left__arrow {
-        width: 50px;
+        width: 25px;
         transform: rotate(180deg);
         position: absolute;
         z-index: 9998;
         top: 50%;
+        padding: 10px;
+        border-radius: 50%;
         cursor: pointer;
+        background-color: #007cff;
 
         @media(min-width: 1024px) {
             left: 30%;

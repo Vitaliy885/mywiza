@@ -32,19 +32,19 @@
     <section class="navbar__line">
         <ul class="navbar">
             <li class="navbar-items">
-                <a href="#home"  class="scrollTo">Головна</a>
+                <a href="#home" class="scrollTo">Головна</a>
             </li>
             <li class="navbar-items">
-                <a href="#services"  class="scrollTo">Послуги</a>
+                <a href="#services" class="scrollTo">Послуги</a>
             </li>
             <li class="navbar-items">
-                <a href="#reviews"  class="scrollTo">Відгуки</a>
+                <a href="#reviews" class="scrollTo">Відгуки</a>
             </li>
             <li class="navbar-items">
-                <a href="#order-service"  class="scrollTo">Замовити послугу</a>
+                <a href="#order-service" class="scrollTo">Замовити послугу</a>
             </li>
             <li class="navbar-items">
-                <a href="#contacts"  class="scrollTo">Контакти</a>
+                <a href="#contacts" class="scrollTo">Контакти</a>
             </li>
         </ul>
         <div class="btn__menu burger">
@@ -58,8 +58,12 @@
         <div class="top_banner_inner-container">
             <h1 class="top__title">Робота за кордоном<br>Візи ЄС</h1>
             <ul>
-                <li>Більше інформації</li>
-                <li>Замовити</li>
+                <li>
+                    <a href="#services" class="scrollTo">Більше інформації</a>
+                </li>
+                <li>
+                    <a href="#order-service" class="scrollTo">Замовити</a>
+                </li>
             </ul>
         </div>
     </section>
@@ -266,7 +270,7 @@
                         </a>
                     </span>
                 </span>
-                <span class="map-location"></span>
+                <span class="map-location" id="chernivtsy"></span>
             </div>
         </div>
         <div class="location__container">
@@ -277,7 +281,7 @@
                 <span class="location-contact">тел. (066) 392-52-12<br></span>
             </div>
             <div class="location-item">
-                <span class="map-location"></span>
+                <span class="map-location" id="ivano"></span>
             </div>
         </div>
     </section>
@@ -299,68 +303,64 @@
         </div>
         <span class="to-top"></span>
     </section>
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/siema.min.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script>
-            (function () {
+    (function() {
 
-       
-                const isNumericInput = (event) => {
-                    const key = event.keyCode;
-                    return ((key >= 48 && key <= 57) || // Allow number line
-                        (key >= 96 && key <= 105) // Allow number pad
-                    );
-                };
 
-                const isModifierKey = (event) => {
-                    const key = event.keyCode;
-                    return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
-                        (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
-                        (key > 36 && key < 41) || // Allow left, up, right, down
-                        (
-                            // Allow Ctrl/Command + A,C,V,X,Z
-                            (event.ctrlKey === true || event.metaKey === true) &&
-                            (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
-                        )
-                };
+        const isNumericInput = (event) => {
+            const key = event.keyCode;
+            return ((key >= 48 && key <= 57) || // Allow number line
+                (key >= 96 && key <= 105) // Allow number pad
+            );
+        };
 
-                const enforceFormat = (event) => {
-                    // Input must be of a valid number format or a modifier key, and not longer than ten digits
-                    if(!isNumericInput(event) && !isModifierKey(event)){
-                        event.preventDefault();
-                    }
-                };
+        const isModifierKey = (event) => {
+            const key = event.keyCode;
+            return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+                (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
+                (key > 36 && key < 41) || // Allow left, up, right, down
+                (
+                    // Allow Ctrl/Command + A,C,V,X,Z
+                    (event.ctrlKey === true || event.metaKey === true) &&
+                    (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
+                )
+        };
 
-                const formatToPhone = (event) => {
-                    if(isModifierKey(event)) {return;}
-                    // I am lazy and don't like to type things more than once
-                    const target = event.target;
-                    const input = event.target.value.replace(/\D/g,'').substring(0,12); // First ten digits of input only
-                    const zip = input.substring(3,5);
-                    const code = input.substring(5,8);
-                    const middle = input.substring(8,10);
-                    const last = input.substring(10,12);
+        const enforceFormat = (event) => {
+            // Input must be of a valid number format or a modifier key, and not longer than ten digits
+            if (!isNumericInput(event) && !isModifierKey(event)) {
+                event.preventDefault();
+            }
+        };
 
-                    if(input.length < 12){target.classList.add('oversize__contacts-input-error')}
-                    else {target.classList.remove('oversize__contacts-input-error')}
+        const formatToPhone = (event) => {
+            if (isModifierKey(event)) { return; }
+            // I am lazy and don't like to type things more than once
+            const target = event.target;
+            const input = event.target.value.replace(/\D/g, '').substring(0, 12); // First ten digits of input only
+            const zip = input.substring(3, 5);
+            const code = input.substring(5, 8);
+            const middle = input.substring(8, 10);
+            const last = input.substring(10, 12);
 
-                    if(input.length > 10){target.value = `+38(0${zip}) ${code}-${middle}-${last}`;}
-                    else if(input.length > 8){target.value = `+38(0${zip}) ${code}-${middle}`;}
-                    else if(input.length > 5){target.value = `+38(0${zip}) ${code}`;}
-                    else if(input.length > 3){target.value = `+38(0${zip}`;}
-                    else if(input.length >= 0){target.value = `+38(0${zip}`;}
-                };
+            if (input.length < 12) { target.classList.add('oversize__contacts-input-error') } else { target.classList.remove('oversize__contacts-input-error') }
 
-                const inputElement = document.getElementById('phoneNumber');
-                inputElement.addEventListener('click',enforceFormat);
-                inputElement.addEventListener('keydown',enforceFormat);
-                inputElement.addEventListener('keyup',formatToPhone);
+            if (input.length > 10) { target.value = `+38(0${zip}) ${code}-${middle}-${last}`; } else if (input.length > 8) { target.value = `+38(0${zip}) ${code}-${middle}`; } else if (input.length > 5) { target.value = `+38(0${zip}) ${code}`; } else if (input.length > 3) { target.value = `+38(0${zip}`; } else if (input.length >= 0) { target.value = `+38(0${zip}`; }
+        };
 
-            })();
-        
+        const inputElement = document.getElementById('phoneNumber');
+        inputElement.addEventListener('click', enforceFormat);
+        inputElement.addEventListener('keydown', enforceFormat);
+        inputElement.addEventListener('keyup', formatToPhone);
+
+    })();
     </script>
+
 </body>
 
 </html>
