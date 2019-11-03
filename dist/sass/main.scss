@@ -64,15 +64,21 @@ body {
                 width: 33.3333%;
             }
 
-            b {
-                padding: 0px 20px;
-                font-size: 38px;
-                color: #007cff;
-                text-shadow: 0px 0px 2px #000;
-                -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: #fff;
-                font-family: fantasy;
+            @media (max-width: 720px) {
+                width: 100%;
+                text-align: center;
             }
+
+            img {
+                width: 50px;
+                padding: 10px;
+
+                @media (max-width: 720px) {
+                    width: 30px;
+                    padding: 0px 10px;
+                }
+            }
+
         }
 
         .schedule {
@@ -83,11 +89,15 @@ body {
             }
 
             @media (max-width: 991px) {
-                width: 25%;
+                width: 30%;
             }
 
             @media (max-width: 768px) {
                 width: 33.3333%;
+            }
+
+            @media (max-width: 720px) {
+                display: none;
             }
 
             p {
@@ -130,7 +140,7 @@ body {
         left: 0px;
         top: 0px;
         right: 0px;
-        z-index: 9999;
+        z-index: 9997;
         animation-duration: .4s;
         animation-name: scrollHeader;
         animation-timing-function: linear;
@@ -287,6 +297,11 @@ body {
                 font-size: 36px;
             }
 
+            @media ("max-width: 550px") {
+                margin-left: unset;
+                padding-left: 20px;
+            }
+
             @media ("max-width: 375px") {
                 font-size: 26px;
             }
@@ -303,9 +318,12 @@ body {
             list-style-type: none;
             color: #fff;
 
+            @media ("max-width: 550px") {
+                margin-left: -40px;
+            }
+
             li {
                 display: inline-block;
-                margin: 0px 20px;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 border-radius: 3px;
@@ -316,6 +334,10 @@ body {
 
                 @media ("max-width: 768px") {
                     margin: 10px;
+                }
+
+                @media ("max-width: 550px") {
+                    padding-left: 10px;
                 }
 
                 @media ("max-width: 450px") {
@@ -333,7 +355,7 @@ body {
                     &:nth-child(1) {
 
                         &:hover {
-                          background-color: #ffffff;
+                            background-color: #ffffff;
                             color: #000;
                             border: 2px solid #fff;
                         }
@@ -444,7 +466,7 @@ body {
 
         .services__item {
             margin: 20px auto;
-            width: 60%;
+            width: 70%;
             padding: 5px;
 
             @media (max-width: 768px) {
@@ -452,13 +474,17 @@ body {
             }
 
             .service__title {
-                font-size: 18px;
+                font-size: 22px;
                 font-weight: 600;
             }
 
             .service__description {
-                font-size: 16px;
+                font-size: 18px;
                 line-height: 1.4;
+
+                ul {
+                    list-style-image: url('/images/passport-card.svg');
+                }
             }
 
             .link__form {
@@ -472,6 +498,7 @@ body {
                 position: relative;
                 top: 10px;
                 letter-spacing: 1px;
+                cursor: pointer;
             }
         }
     }
@@ -592,7 +619,7 @@ body {
     .right__arrow {
         width: 25px;
         position: absolute;
-        z-index: 9998;
+        z-index: 9996;
         top: 50%;
         right: 0;
         padding: 10px;
@@ -609,7 +636,7 @@ body {
         width: 25px;
         transform: rotate(180deg);
         position: absolute;
-        z-index: 9998;
+        z-index: 9996;
         top: 50%;
         padding: 10px;
         border-radius: 50%;
@@ -676,7 +703,7 @@ body {
     .callback__form {
         position: absolute;
         background-color: #fff;
-        z-index: 9998;
+        z-index: 9996;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -812,6 +839,20 @@ body {
                 @media (max-width: 550px) {
                     margin: 20px auto;
                 }
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1.6);
+                    }
+
+                }
             }
         }
     }
@@ -863,6 +904,180 @@ body {
         &.active {
             display: block;
 
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    background-color: rgba(#000000, 0.7);
+    display: none;
+
+    &.active {
+        display: block;
+
+    }
+}
+
+.modal-success {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    background-color: #ffffff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: none;
+    overflow: hidden;
+
+    &.active {
+        display: block;
+    }
+
+    .success-title {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 600;
+        display: block;
+        padding: 30px;
+    }
+
+    .close-modal {
+        display: block;
+        background-color: #007cff;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: -30px;
+        top: 0;
+        transform: rotate(-45deg);
+        cursor: pointer;
+
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            right: -11px;
+            top: 15px;
+            transition: right .3s;
+            transform: rotate(90deg);
+            width: 16px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: relative;
+            right: -10px;
+            top: 17px;
+            transition: right .3s;
+            transform: rotate(0deg);
+            width: 16px;
+            height: 2px;
+            background-color: #fff;
+        }
+    }
+}
+
+.modal {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    background-color: #ffffff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: none;
+    overflow: hidden;
+
+    &.active {
+        display: block;
+    }
+
+    .close-modal {
+        display: block;
+        background-color: #007cff;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: -30px;
+        top: 0;
+        transform: rotate(-45deg);
+        cursor: pointer;
+
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            right: -11px;
+            top: 15px;
+            transition: right .3s;
+            transform: rotate(90deg);
+            width: 16px;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: relative;
+            right: -10px;
+            top: 17px;
+            transition: right .3s;
+            transform: rotate(0deg);
+            width: 16px;
+            height: 2px;
+            background-color: #fff;
+        }
+    }
+
+    .callback__form {
+        display: block;
+        text-align: center;
+
+        .input__field {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .form-title {
+            text-transform: uppercase;
+            font-size: 22px;
+            font-weight: 600;
+            display: block;
+            padding: 30px 0px 0px 0px;
+        }
+
+        .submit__form {
+            display: block;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #007cff;
+            outline: none;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 5px 5px 5px #cccccc;
+            }
         }
     }
 }
